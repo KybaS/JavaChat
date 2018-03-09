@@ -28,8 +28,8 @@ public class ClientWindow extends JFrame implements ActionListener, TCPConnectio
     }
 
     private final JTextArea log = new JTextArea();
-    private final JTextArea fieldNickName = new JTextArea("John");
-    private final JTextArea fieldInput = new JTextArea();
+    private final JTextField fieldNickName = new JTextField("John");
+    private final JTextField fieldInput = new JTextField();
 
     private TCPConnection connection;
 
@@ -42,7 +42,7 @@ public class ClientWindow extends JFrame implements ActionListener, TCPConnectio
             log.setLineWrap(true);
             add(log, BorderLayout.CENTER);
 
-            fieldInput.addAncestorListener((AncestorListener) this);
+            fieldInput.addActionListener(this);
             add(fieldInput, BorderLayout.SOUTH);
             add(fieldNickName, BorderLayout.NORTH);
 
